@@ -12,7 +12,6 @@ namespace ToDoList.Controllers
     [Authorize]
     public class DataController : ControllerBase
     {
-
         [HttpGet]
         public IActionResult GetToDoList()
         {
@@ -35,8 +34,6 @@ namespace ToDoList.Controllers
                 return BadRequest(ex);
             }
         }
-
-
 
         [HttpGet("{id}")]
         public ActionResult<ToDo> GetById(int id)
