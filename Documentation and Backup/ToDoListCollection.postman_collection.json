@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "471130cd-520e-4e42-b67d-028bca117af9",
+		"name": "ToDoListCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"UserName\": \"Admin\",\r\n\t\"Password\": \"Admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44336/Account",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"Account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ToDo List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJBZG1pbiIsIm5iZiI6MTYyMzQzNTU1MiwiZXhwIjoxNjIzNTIxOTUyLCJpYXQiOjE2MjM0MzU1NTJ9.igiaTCjUlgMvmkLQvGIKwyoDS0b5ERanmPgJYsq1psM-MPvKbc5f83pT4kIwDeZdYnqIQk5fQVnUcIeAybVZKA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44336/Data",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"Data"
+					]
+				},
+				"description": "use this url to get all the toDo data from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "Save ToDo object",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJBZG1pbiIsIm5iZiI6MTYyMzQzNTU1MiwiZXhwIjoxNjIzNTIxOTUyLCJpYXQiOjE2MjM0MzU1NTJ9.igiaTCjUlgMvmkLQvGIKwyoDS0b5ERanmPgJYsq1psM-MPvKbc5f83pT4kIwDeZdYnqIQk5fQVnUcIeAybVZKA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Id\": 4,\r\n\t\"Title\": \"postman request\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44336/Data",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"Data"
+					]
+				},
+				"description": "this request is used to save a new ToDo object in the database. In case the object Id is 0, a new record will be added, other wise an update operation will be occured "
+			},
+			"response": []
+		},
+		{
+			"name": "Delete ToDo ",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJBZG1pbiIsIm5iZiI6MTYyMzQzNTU1MiwiZXhwIjoxNjIzNTIxOTUyLCJpYXQiOjE2MjM0MzU1NTJ9.igiaTCjUlgMvmkLQvGIKwyoDS0b5ERanmPgJYsq1psM-MPvKbc5f83pT4kIwDeZdYnqIQk5fQVnUcIeAybVZKA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44336/Data/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44336",
+					"path": [
+						"Data",
+						"4"
+					]
+				},
+				"description": "this request is used to delete a ToDo obejct"
+			},
+			"response": []
+		}
+	]
+}
